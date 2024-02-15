@@ -1,4 +1,3 @@
-const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
@@ -9,11 +8,6 @@ const globalErrorHandler = require('./controllers/errorController');
 const userRouter = require('./routes/userRoutes');
 
 const app = express();
-
-app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, 'views'));
-// 1) GLOBAL MIDDLEWARES
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(helmet());
 
